@@ -188,6 +188,11 @@
     font-family:var(--mono); font-size:30px; font-weight:700; letter-spacing:.05em;
     border:4px solid var(--paper); box-shadow:0 0 0 1px var(--border);
   }
+  .avatar-photo{
+    width:140px; height:140px; border-radius:50%;
+    object-fit:cover; object-position:top center;
+    border:4px solid var(--paper); box-shadow:0 0 0 1px var(--border);
+  }
   .greeting-card p{ margin-bottom:16px; color:var(--ink-soft); font-size:15px; }
   .signature{ font-family:var(--mono); font-weight:700; color:var(--ink); margin-top:18px; font-size:14.5px; }
 
@@ -267,8 +272,14 @@
     max-height:0; overflow:hidden; padding:0 26px; font-size:14px; color:var(--ink-soft);
     transition:max-height .3s ease, padding .3s ease;
   }
-  .notice-body.open{ max-height:320px; padding:0 26px 22px; }
+  .notice-body.open{ max-height:420px; padding:0 26px 22px; }
   .notice-empty{ padding:34px 30px; color:var(--ink-soft); font-size:14px; }
+  .notice-download{
+    display:inline-flex; align-items:center; gap:6px; margin-top:12px;
+    padding:8px 16px; font-size:13px; font-weight:700; font-family:var(--mono);
+    color:#fff; background:var(--ink); border-radius:2px; text-decoration:none;
+  }
+  .notice-download:hover{ background:var(--signal); }
 
   /* ===== Free board (giscus mount) ===== */
   .board-setup-note{
@@ -454,7 +465,7 @@
         <p>21세기 지식기반사회를 함께 만들어갈 울산의 동반자가 되겠습니다.</p>
       </div>
       <div class="corner-frame greeting-card reveal">
-        <div class="avatar-mono">송<br>병<br>철</div>
+        <img class="avatar-photo" src="chairman.jpg" alt="이사장 송병철">
         <div>
           <p>세계화의 빠른 속도와 IT의 발달은 새로운 지식기반을 통해 첨단산업, 지식 집약적 산업으로 변화해 가고 있습니다. 21세기 지식기반사회에서 우리의 과제는 지식기반을 구축함으로써 고부가가치 창출과 새로운 산업화를 이뤄나가는 것입니다.</p>
           <p>현재 울산은 자동차·부품, 조선·기자재 등 구조고도화산업을 지식기반형 고부가가치 산업구조로 재편해 나가고 있으며, 지속성장을 위한 시너지 효과를 거두기 위해서는 교육과 산업의 연계시스템 구축이 반드시 필요합니다.</p>
@@ -784,6 +795,11 @@
   // 공지사항 데이터
   // ▼ 새 공지를 추가하려면 아래 배열에 { date, tag, title, body } 형태로 한 줄만 추가하면 됩니다.
   const noticesData = [
+    { date:"2026-07-10", tag:"공지", title:"2026 울산로봇경진대회 개최 및 참가 신청 안내",
+      body:"AI 기반 지식정보화 사회를 선도할 창의적 인재, 과학도를 육성하고자 2026 울산로봇경진대회를 개최합니다.<br>" +
+        "대회 일시: 2026년 9월 12일(토) 09:30~17:00 · 장소: 울산전시컨벤션센터(UECO) · 참가비 무료<br>" +
+        "참가 신청: 2026년 8월 3일(월) ~ 8월 17일(월) 오후 5시까지<br>" +
+        "<a class=\"notice-download\" href=\"2026-ulsan-robot-contest.pdf\" download>공지문 다운로드 (PDF)</a>" },
     { date:"2026-06-15", tag:"모집", title:"2026 로봇과학교실 신규 회원 모집 안내",
       body:"초·중학생을 대상으로 한 로봇과학교실 신규 회원을 모집합니다. 자세한 일정과 신청 방법은 사무국으로 문의해 주세요." },
     { date:"2026-05-20", tag:"공지", title:"제12회 UCI 로봇경진대회 참가신청 안내",
