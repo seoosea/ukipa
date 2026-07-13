@@ -272,7 +272,7 @@
     max-height:0; overflow:hidden; padding:0 26px; font-size:14px; color:var(--ink-soft);
     transition:max-height .3s ease, padding .3s ease;
   }
-  .notice-body.open{ max-height:420px; padding:0 26px 22px; }
+  .notice-body.open{ max-height:520px; padding:0 26px 22px; overflow-y:auto; }
   .notice-empty{ padding:34px 30px; color:var(--ink-soft); font-size:14px; }
   .notice-download{
     display:inline-flex; align-items:center; gap:6px; margin-top:12px;
@@ -280,6 +280,8 @@
     color:#fff; background:var(--ink); border-radius:2px; text-decoration:none;
   }
   .notice-download:hover{ background:var(--signal); }
+  .notice-download-list{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .notice-download-list .notice-download{ margin-top:0; }
 
   /* ===== Free board (giscus mount) ===== */
   .board-setup-note{
@@ -799,7 +801,13 @@
       body:"AI 기반 지식정보화 사회를 선도할 창의적 인재, 과학도를 육성하고자 2026 울산로봇경진대회를 개최합니다.<br>" +
         "대회 일시: 2026년 9월 12일(토) 09:30~17:00 · 장소: 울산전시컨벤션센터(UECO) · 참가비 무료<br>" +
         "참가 신청: 2026년 8월 3일(월) ~ 8월 17일(월) 오후 5시까지<br>" +
-        "<a class=\"notice-download\" href=\"2026-ulsan-robot-contest.pdf\" download>공지문 다운로드 (PDF)</a>" },
+        "<div class=\"notice-download-list\">" +
+        "<a class=\"notice-download\" href=\"files/contest-guidelines.hwp\" download>대회요강 (HWP)</a>" +
+        "<a class=\"notice-download\" href=\"files/entry-form-individual.hwp\" download>개인전 신청서 (HWP)</a>" +
+        "<a class=\"notice-download\" href=\"files/entry-form-smash-robot.xlsx\" download>스매시로봇 단체신청서 (XLSX)</a>" +
+        "<a class=\"notice-download\" href=\"files/entry-form-touch-robot.xlsx\" download>터치로봇 단체신청서 (XLSX)</a>" +
+        "<a class=\"notice-download\" href=\"files/entry-form-hackathon.xlsx\" download>해커톤 단체신청서 (XLSX)</a>" +
+        "</div>" },
     { date:"2026-06-15", tag:"모집", title:"2026 로봇과학교실 신규 회원 모집 안내",
       body:"초·중학생을 대상으로 한 로봇과학교실 신규 회원을 모집합니다. 자세한 일정과 신청 방법은 사무국으로 문의해 주세요." },
     { date:"2026-03-10", tag:"안내", title:"2026년도 정기총회 개최 결과",
